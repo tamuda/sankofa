@@ -23,6 +23,9 @@ export default function HeroSection() {
             <h1 className="font-title text-3xl font-semibold leading-tight tracking-tight text-white md:text-4xl lg:text-5xl">
               Your best year starts with taking care of your mind
             </h1>
+            <button className="mt-8 rounded-full bg-white px-8 py-4 font-body text-base font-medium text-[#8881c2] transition-all hover:bg-white/90 cursor-pointer">
+              Schedule appointment
+            </button>
           </div>
 
           {/* Right Side - Girl Mind Image - showing right side where person is */}

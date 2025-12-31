@@ -103,10 +103,10 @@ export default function WaysToSupportSection() {
   const cards = selectedPath === "support" ? SUPPORT_CARDS : PARTNER_CARDS;
 
   return (
-    <section className="mt-32 w-full pb-32">
+    <section className="mt-16 w-full pb-16">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="mb-16 text-center">
-          <h2 className="font-title text-4xl font-semibold tracking-tight text-black md:text-5xl">
+          <h2 className="font-title text-4xl font-semibold tracking-tight text-[#2d2c2b] md:text-5xl">
             Ways we can support you
           </h2>
           <p className="mt-6 font-body text-lg text-gray-600">

@@ -12,7 +12,7 @@ interface SupportContextType {
 const SupportContext = createContext<SupportContextType | undefined>(undefined);
 
 export function SupportProvider({ children }: { children: ReactNode }) {
-  const [selectedPath, setSelectedPath] = useState<SupportPath>(null);
+  const [selectedPath, setSelectedPath] = useState<SupportPath>("support");
 
   return (
     <SupportContext.Provider value={{ selectedPath, setSelectedPath }}>

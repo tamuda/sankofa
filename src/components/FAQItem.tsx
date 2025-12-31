@@ -16,7 +16,7 @@ export default function FAQItem({ question, answer }: FAQItemProps) {
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full cursor-pointer items-center justify-between py-6 text-left transition-colors hover:text-[#8881c2]"
       >
-        <span className="font-title text-lg font-semibold tracking-tight text-black md:text-xl">
+        <span className="font-title text-lg font-semibold tracking-tight text-[#2d2c2b] md:text-xl">
           {question}
         </span>
         <svg

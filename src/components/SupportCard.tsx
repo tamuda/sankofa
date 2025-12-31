@@ -46,15 +46,15 @@ export default function SupportCard({
 
       {/* Text Content - Bottom */}
       <div className="flex flex-col gap-4">
-        <h3 className={`font-title text-3xl font-semibold tracking-tight ${isDark ? "text-white" : "text-black"}`}>
+        <h3 className={`font-title text-3xl font-semibold tracking-tight ${isDark ? "text-white" : "text-[#2d2c2b]"}`}>
           {title}
         </h3>
-        <p className={`font-body text-lg ${isDark ? "text-white/80" : "text-black/70"}`}>{description}</p>
+        <p className={`font-body text-lg ${isDark ? "text-white/80" : "text-[#2d2c2b]/70"}`}>{description}</p>
         <button
           onClick={onClick}
           className={`cursor-pointer w-fit rounded-full px-6 py-3 font-body text-sm font-medium transition-all ${
             isDark
-              ? "bg-white text-black hover:bg-white/90"
+              ? "bg-white text-[#2d2c2b] hover:bg-white/90"
               : "bg-black text-white hover:bg-black/90"
           }`}
         >

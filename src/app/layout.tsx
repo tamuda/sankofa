@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Capriola, Inter } from "next/font/google";
+import { Lora, Inter } from "next/font/google";
 import "./globals.css";
 
-const capriola = Capriola({
-  variable: "--font-capriola",
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 const inter = Inter({
@@ -24,10 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${capriola.variable} ${inter.variable} antialiased`}
-      >
+    <html lang="en" className={lora.variable}>
+      <body className={`${lora.variable} ${inter.variable} antialiased`}>
         {children}
       </body>
     </html>
