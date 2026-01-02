@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import TeamCard from "./TeamCard";
 import TeamModal from "./TeamModal";
 
@@ -18,38 +19,44 @@ interface TeamCarouselProps {
 
 export default function TeamCarousel({ members }: TeamCarouselProps) {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   // Duplicate members for seamless infinite loop
-  const duplicatedMembers = [...members, ...members];
+  const duplicatedMembers = [...members, ...members, ...members];
 
   // Card width + gap (280px card + 24px gap = 304px per card)
   const cardWidthWithGap = 304;
   const totalWidth = cardWidthWithGap * members.length;
-  const animationDuration = members.length * 5; // 5 seconds per member
 
   return (
-    <div className="relative w-full overflow-hidden">
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          @keyframes team-scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-${totalWidth}px);
-            }
-          }
-          .team-carousel-scroll {
-            animation: team-scroll ${animationDuration}s linear infinite;
-          }
-        `
-      }} />
-      {/* Infinite scrolling carousel */}
-      <div className="flex team-carousel-scroll">
+    <div 
+      className="relative w-full overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Infinite scrolling carousel with Framer Motion */}
+      <motion.div 
+        className="flex"
+        animate={{
+          x: [0, -totalWidth],
+        }}
+        transition={{
+          x: {
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: members.length * 5,
+            ease: "linear",
+          },
+        }}
+        style={{
+          width: `${cardWidthWithGap * duplicatedMembers.length}px`,
+        }}
+      >
         {duplicatedMembers.map((member, index) => (
           <div
             key={`${member.name}-${index}`}
             className="flex-shrink-0 pr-6 flex justify-center"
+            style={{ width: `${cardWidthWithGap}px` }}
           >
             <TeamCard
               name={member.name}
@@ -60,7 +67,7 @@ export default function TeamCarousel({ members }: TeamCarouselProps) {
             />
           </div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Team Modal */}
       {selectedMember && (

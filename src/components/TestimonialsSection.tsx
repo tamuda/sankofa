@@ -30,8 +30,8 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section className="mx-auto mt-16 w-full max-w-7xl px-6 pb-16 md:px-12">
-      <div className="text-center">
+    <section className="w-full bg-background py-24">
+      <div className="mx-auto max-w-7xl px-6 md:px-12 text-center">
         {/* Header */}
         <div className="mb-16 relative">
           <div className="flex items-center justify-center gap-4 md:gap-6">
@@ -46,7 +46,7 @@ export default function TestimonialsSection() {
               />
             </div>
 
-            <h2 className="font-title md:max-w-3xl text-4xl font-semibold tracking-tight leading-tight text-[#2d2c2b] md:text-5xl lg:text-6xl relative">
+            <h2 className="font-title md:max-w-3xl text-4xl font-semibold tracking-tight leading-tight text-text-primary md:text-5xl lg:text-6xl relative">
               {/* Star 1 */}
               <div className="absolute -top-6 left-1/4">
                 <svg
@@ -86,11 +86,11 @@ export default function TestimonialsSection() {
         {/* Testimonial Cards */}
         <div className="grid gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((testimonial, index) => (
-            <div key={index} className="rounded-2xl bg-stone-200 p-8 text-left">
-              <p className="font-body text-lg font-medium text-gray-700 mb-32">
+            <div key={index} className="rounded-2xl bg-card-bg border border-border-color p-8 text-left">
+              <p className="font-body text-lg font-medium text-text-primary mb-32">
                 "{testimonial.quote}"
               </p>
-              <p className="font-body text-sm text-gray-500">
+              <p className="font-body text-sm text-text-secondary">
                 {testimonial.attribution}
               </p>
             </div>

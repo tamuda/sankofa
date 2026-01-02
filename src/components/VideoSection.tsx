@@ -40,40 +40,42 @@ export default function VideoSection() {
   };
 
   return (
-    <section className="mx-auto mt-32 w-full max-w-7xl px-6 pb-32 md:px-12">
-      {/* Video Container */}
-      <div className="relative h-[400px] md:h-[500px] lg:h-[600px] w-full overflow-hidden rounded-3xl bg-gray-900 group">
-        <video
-          ref={videoRef}
-          className="h-full w-full object-cover"
-          controls={isPlaying}
-          onClick={handleVideoClick}
-          onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
-        >
-          <source src={videoSrc} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-
-        {/* Custom Play Button Overlay */}
-        {!isPlaying && (
-          <div
-            className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-black/10 via-black/20 to-black/30 cursor-pointer transition-all group-hover:from-black/20 group-hover:via-black/30 group-hover:to-black/40 z-10"
-            onClick={handlePlayClick}
+    <section className="w-full bg-surface py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 md:px-12">
+        {/* Video Container */}
+        <div className="relative h-[400px] md:h-[500px] lg:h-[600px] w-full overflow-hidden rounded-3xl bg-gray-900 group">
+          <video
+            ref={videoRef}
+            className="h-full w-full object-cover"
+            controls={isPlaying}
+            onClick={handleVideoClick}
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
           >
-            {/* Large Play Button */}
-            <button
-              className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center transition-all hover:scale-110 hover:bg-white active:scale-95"
-              aria-label="Play video"
+            <source src={videoSrc} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+  
+          {/* Custom Play Button Overlay */}
+          {!isPlaying && (
+            <div
+              className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-black/10 via-black/20 to-black/30 cursor-pointer transition-all group-hover:from-black/20 group-hover:via-black/30 group-hover:to-black/40 z-10"
+              onClick={handlePlayClick}
             >
-              {/* Play Icon from Lucide */}
-              <Play
-                className="w-10 h-10 md:w-12 md:h-12 text-gray-900 ml-1"
-                fill="currentColor"
-              />
-            </button>
-          </div>
-        )}
+              {/* Large Play Button */}
+              <button
+                className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center transition-all hover:scale-110 hover:bg-white active:scale-95"
+                aria-label="Play video"
+              >
+                {/* Play Icon from Lucide */}
+                <Play
+                  className="w-10 h-10 md:w-12 md:h-12 text-gray-900 ml-1"
+                  fill="currentColor"
+                />
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

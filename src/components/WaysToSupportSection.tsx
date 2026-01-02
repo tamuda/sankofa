@@ -3,7 +3,15 @@
 import { useSupport } from "@/contexts/SupportContext";
 import SupportCarousel from "./SupportCarousel";
 
-const SUPPORT_CARDS = [
+interface CardData {
+  title: string;
+  description: string;
+  ctaText: string;
+  bgColor: string;
+  textColor?: "white" | "black";
+}
+
+const SUPPORT_CARDS: CardData[] = [
   {
     title: "Talk things through",
     description: "One-on-one therapy for what's on your mind",
@@ -48,7 +56,7 @@ const SUPPORT_CARDS = [
   },
 ];
 
-const PARTNER_CARDS = [
+const PARTNER_CARDS: CardData[] = [
   {
     title: "Bring mental health support to your organization",
     description: "Workshops and trainings tailored to your team or community",
@@ -103,13 +111,13 @@ export default function WaysToSupportSection() {
   const cards = selectedPath === "support" ? SUPPORT_CARDS : PARTNER_CARDS;
 
   return (
-    <section className="mt-16 w-full pb-16">
+    <section className="w-full bg-background py-24">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="mb-16 text-center">
-          <h2 className="font-title text-4xl font-semibold tracking-tight text-[#2d2c2b] md:text-5xl">
+          <h2 className="font-title text-4xl font-semibold tracking-tight text-text-primary md:text-5xl">
             Ways we can support you
           </h2>
-          <p className="mt-6 font-body text-lg text-gray-600">
+          <p className="mt-6 font-body text-lg text-text-secondary">
             Start with what feels most helpful right now.
           </p>
         </div>

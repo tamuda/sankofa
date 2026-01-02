@@ -22,11 +22,11 @@ export default function SupportTopicsSection() {
   }
 
   return (
-    <section className="mt-16 w-full pb-16">
+    <section className="w-full bg-surface py-24">
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
         {/* Topics Section */}
         <div className="mb-8 text-center">
-          <h2 className="font-title text-4xl font-semibold tracking-tight text-[#2d2c2b] md:text-5xl">
+          <h2 className="font-title text-4xl font-semibold tracking-tight text-text-primary md:text-5xl">
             We help you through issues like:
           </h2>
 
@@ -34,12 +34,12 @@ export default function SupportTopicsSection() {
             {TOPICS.map((topic, index) => (
               <span
                 key={index}
-                className="rounded-full bg-[#8881c2]/10 px-6 py-3 font-body text-base font-medium text-[#8881c2] md:text-lg"
+                className="rounded-full bg-accent-soft px-6 py-3 font-body text-base font-medium text-accent md:text-lg"
               >
                 {topic}
               </span>
             ))}
-            <span className="rounded-full bg-[#8881c2]/10 px-6 py-3 font-body text-base font-medium text-[#8881c2] md:text-lg">
+            <span className="rounded-full bg-accent-soft px-6 py-3 font-body text-base font-medium text-accent md:text-lg">
               And more
             </span>
           </div>
@@ -67,7 +67,7 @@ export default function SupportTopicsSection() {
           </div>
 
           {/* Card 2 - Insurance/Payment (Second from left, Medium-tall) */}
-          <div className="w-[280px] rounded-3xl bg-[#483e62] p-10 text-white h-[320px] flex flex-col justify-between text-left">
+          <div className="w-[280px] rounded-3xl bg-accent-deep p-10 text-white h-[320px] flex flex-col justify-between text-left">
             <h3 className="font-title text-2xl font-semibold tracking-tight">
               Insurance and payment options
             </h3>
@@ -81,7 +81,7 @@ export default function SupportTopicsSection() {
           <div className="w-[280px] rounded-3xl bg-stone-100 p-10 h-[280px] flex flex-col justify-between text-left">
             <div>
               <svg
-                className="h-8 w-8 mb-4 text-[#483e62]"
+                className="h-8 w-8 mb-4 text-accent-deep"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -93,7 +93,7 @@ export default function SupportTopicsSection() {
                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <h3 className="font-title text-2xl font-semibold tracking-tight text-[#483e62]">
+              <h3 className="font-title text-2xl font-semibold tracking-tight text-accent-deep">
                 The session can be held at a convenient time for you.
               </h3>
             </div>

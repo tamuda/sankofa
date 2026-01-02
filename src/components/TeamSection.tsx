@@ -106,7 +106,7 @@ export default function TeamSection() {
   }
 
   return (
-    <section className="mt-16 w-full bg-[#605581] pt-24 pb-24">
+    <section className="w-full bg-accent-deep pt-24 pb-24">
       {/* Header Section */}
       <div className="mx-auto max-w-7xl px-8 md:px-16 mb-20">
         <div className="text-center">
@@ -118,7 +118,7 @@ export default function TeamSection() {
             experience, and deep care into every conversation. We meet people
             where they are, with respect for their stories and communities.
           </p>
-          <button className="mt-8 rounded-full bg-white px-8 py-4 font-body text-base font-medium text-[#8881c2] transition-colors hover:bg-white/90 cursor-pointer">
+          <button className="mt-8 rounded-full bg-white px-8 py-4 font-body text-base font-medium text-accent transition-colors hover:bg-white/90 cursor-pointer">
             Meet the team
           </button>
         </div>

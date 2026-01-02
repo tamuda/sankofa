@@ -3,7 +3,7 @@ import Logo from "./Logo";
 
 export default function Footer() {
   return (
-    <footer className="bg-stone-50 border-t border-gray-200">
+    <footer className="bg-surface border-t border-border-color">
       {/* Newsletter Section */}
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-12">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
@@ -12,18 +12,18 @@ export default function Footer() {
             <div className="mb-4">
               <Logo width={56} height={56} showText textClassName="text-3xl" />
             </div>
-            <h3 className="font-title text-3xl font-semibold tracking-tight text-[#2d2c2b] mb-3">
+            <h3 className="font-title text-3xl font-semibold tracking-tight text-text-primary mb-3">
               Stay in the loop
             </h3>
-            <p className="font-body text-base text-gray-700 mb-4">
+            <p className="font-body text-base text-text-secondary mb-4">
               Be the first to get updates on our latest content, special offers,
               and new features.
             </p>
-            <p className="font-body text-sm text-gray-600">
+            <p className="font-body text-sm text-text-secondary">
               By signing up, you're agreeing to receive marketing emails from
               Sankofa. You can unsubscribe at any time. For more details, check
               out our{" "}
-              <Link href="/privacy" className="underline hover:text-[#8881c2]">
+              <Link href="/privacy" className="underline hover:text-accent transition-colors">
                 Privacy Policy
               </Link>
               .
@@ -36,11 +36,11 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Email address"
-                className="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3 font-body text-base text-gray-900 placeholder-gray-500 focus:border-[#8881c2] focus:outline-none focus:ring-2 focus:ring-[#8881c2]/20"
+                className="flex-1 rounded-lg border border-border-color bg-background px-4 py-3 font-body text-base text-text-primary placeholder-text-secondary/50 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent-soft"
               />
               <button
                 type="submit"
-                className="rounded-lg bg-[#8881c2] px-6 py-3 font-body text-base font-medium text-white transition-colors hover:bg-[#8881c2]/90 focus:outline-none focus:ring-2 focus:ring-[#8881c2]/20"
+                className="rounded-lg bg-accent px-6 py-3 font-body text-base font-medium text-white transition-colors hover:bg-accent-hover focus:outline-none focus:ring-2 focus:ring-accent-soft"
               >
                 Subscribe
               </button>
@@ -50,19 +50,19 @@ export default function Footer() {
       </div>
 
       {/* Footer Links */}
-      <div className="border-t border-gray-200">
+      <div className="border-t border-border-color">
         <div className="mx-auto max-w-7xl px-6 py-12 md:px-12">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
             {/* Column 1: Get Support */}
             <div>
-              <h4 className="font-title text-sm font-semibold tracking-tight text-[#2d2c2b] mb-4">
+              <h4 className="font-title text-sm font-semibold tracking-tight text-text-primary mb-4">
                 Get Support
               </h4>
               <ul className="flex flex-col gap-3">
                 <li>
                   <Link
                     href="/support"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Get Support
                   </Link>
@@ -70,7 +70,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/support/individual"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Individual Therapy
                   </Link>
@@ -78,7 +78,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/support/couples"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Couples Counseling
                   </Link>
@@ -86,7 +86,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/support/family"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Family Support
                   </Link>
@@ -94,7 +94,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/support/insurance"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Insurance & Payment
                   </Link>
@@ -102,7 +102,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/support/schedule"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Schedule a Session
                   </Link>
@@ -112,14 +112,14 @@ export default function Footer() {
 
             {/* Column 2: Partner With Us */}
             <div>
-              <h4 className="font-title text-sm font-semibold tracking-tight text-[#2d2c2b] mb-4">
+              <h4 className="font-title text-sm font-semibold tracking-tight text-text-primary mb-4">
                 Partner With Us
               </h4>
               <ul className="flex flex-col gap-3">
                 <li>
                   <Link
                     href="/partner"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Partner With Us
                   </Link>
@@ -127,7 +127,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/partner/workshops"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Workshops & Training
                   </Link>
@@ -135,7 +135,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/partner/organizations"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     For Organizations
                   </Link>
@@ -143,7 +143,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/partner/community"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Community Programs
                   </Link>
@@ -151,7 +151,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/partner/referrals"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Referral Program
                   </Link>
@@ -168,7 +168,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/about"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     About Sankofa
                   </Link>
@@ -176,7 +176,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/about/mission"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Our Mission
                   </Link>
@@ -184,7 +184,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/about/team"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Our Team
                   </Link>
@@ -192,7 +192,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/about/approach"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Our Approach
                   </Link>
@@ -200,7 +200,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/about/location"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Location
                   </Link>
@@ -217,7 +217,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/resources"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Mental Health Resources
                   </Link>
@@ -225,7 +225,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/resources/articles"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Articles & Blog
                   </Link>
@@ -233,7 +233,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/resources/self-care"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Self-Care Tips
                   </Link>
@@ -241,7 +241,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/resources/crisis"
-                    className="font-body text-sm text-gray-600 hover:text-[#8881c2] transition-colors"
+                    className="font-body text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
                     Crisis Resources
                   </Link>
@@ -331,7 +331,7 @@ export default function Footer() {
                 <li className="mt-4">
                   <Link
                     href="/login"
-                    className="inline-block rounded-lg bg-[#8881c2] px-4 py-2 font-body text-sm font-medium text-white transition-colors hover:bg-[#8881c2]/90"
+                    className="inline-block rounded-lg bg-accent px-4 py-2 font-body text-sm font-medium text-white transition-colors hover:bg-accent-hover"
                   >
                     Login
                   </Link>
@@ -343,7 +343,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-[#444240]">
+      <div className="bg-[#444240] dark:bg-background">
         <div className="mx-auto max-w-7xl px-6 py-8 md:px-12">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             {/* Left: Copyright and Legal Links */}

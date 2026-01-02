@@ -4,12 +4,13 @@ import ActionButton from "./ActionButton";
 import { useSupport } from "@/contexts/SupportContext";
 
 export default function WhatBringsYouSection() {
-  const { selectedPath, setSelectedPath } = useSupport();
+  const { setSelectedPath } = useSupport();
 
   return (
-    <section className="mx-auto mt-8 max-w-7xl px-6 pb-8 md:px-12">
+    <section className="w-full bg-background py-16">
+      <div className="mx-auto max-w-7xl px-6 md:px-12">
       <div className="flex flex-col items-center">
-        <h2 className="font-title text-4xl font-semibold tracking-tight text-[#2d2c2b] md:text-5xl">
+        <h2 className="font-title text-4xl font-semibold tracking-tight text-text-primary md:text-5xl">
           What brings you here today?
         </h2>
 
@@ -19,16 +20,15 @@ export default function WhatBringsYouSection() {
             iconSrc="/icons/moon.svg"
             iconAlt="Moon icon"
             onClick={() => setSelectedPath("support")}
-            isActive={selectedPath === "support"}
           />
           <ActionButton
             text="I'm interested in partnering"
             iconSrc="/icons/partner.svg"
             iconAlt="Partner icon"
             onClick={() => setSelectedPath("partner")}
-            isActive={selectedPath === "partner"}
           />
         </div>
+      </div>
       </div>
     </section>
   );

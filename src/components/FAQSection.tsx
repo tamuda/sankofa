@@ -100,10 +100,11 @@ export default function FAQSection() {
   const faqs = selectedPath === "support" ? SUPPORT_FAQS : PARTNER_FAQS;
 
   return (
-    <section className="mx-auto mt-16 w-full max-w-4xl px-6 pb-16 md:px-12">
+    <section className="w-full bg-background py-24">
+      <div className="mx-auto max-w-4xl px-6 md:px-12">
       <div className="flex flex-col">
         <div className="mb-16 text-center">
-          <h2 className="font-title text-4xl font-semibold tracking-tight text-[#2d2c2b] md:text-5xl">
+          <h2 className="font-title text-4xl font-semibold tracking-tight text-text-primary md:text-5xl">
             Frequently asked questions
           </h2>
         </div>
@@ -117,6 +118,7 @@ export default function FAQSection() {
             />
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Lora, Inter } from "next/font/google";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 
 const lora = Lora({
   variable: "--font-lora",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +26,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={lora.variable}>
+    <html lang="en" suppressHydrationWarning>
       <body className={`${lora.variable} ${inter.variable} antialiased`}>
-        {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark')
+                } else {
+                  document.documentElement.classList.remove('dark')
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

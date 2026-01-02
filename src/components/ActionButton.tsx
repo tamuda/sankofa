@@ -5,7 +5,6 @@ interface ActionButtonProps {
   iconSrc: string;
   iconAlt: string;
   onClick?: () => void;
-  isActive?: boolean;
 }
 
 export default function ActionButton({
@@ -13,16 +12,11 @@ export default function ActionButton({
   iconSrc,
   iconAlt,
   onClick,
-  isActive = false,
 }: ActionButtonProps) {
   return (
     <button
       onClick={onClick}
-      className={`group flex min-w-[280px] items-center justify-between rounded-xl border-2 px-6 py-4 text-left transition-all ${
-        isActive
-          ? "border-[#8881c2] bg-[#8881c2]/10"
-          : "border-[#8881c2]/20 bg-white hover:border-[#8881c2]/40"
-      }`}
+      className="group flex min-w-[280px] items-center justify-between rounded-xl border-2 border-[#8881c2]/20 bg-white px-6 py-4 text-left transition-all hover:border-[#8881c2]/40"
     >
       <span className="font-body text-lg font-medium text-[#8881c2] pr-8">
         {text}

@@ -133,11 +133,11 @@ export default function BlogSection() {
   };
 
   return (
-    <section className="mt-16 w-full pb-16">
+    <section className="w-full bg-surface py-24">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         {/* Title */}
         <div className="mb-12 text-center">
-          <h2 className="font-title text-4xl font-semibold tracking-tight text-[#2d2c2b] md:text-5xl">
+          <h2 className="font-title text-4xl font-semibold tracking-tight text-text-primary md:text-5xl">
             Explore our library
           </h2>
         </div>
@@ -150,8 +150,8 @@ export default function BlogSection() {
               onClick={() => setSelectedCategory(category.id)}
               className={`flex items-center gap-2 rounded-full px-5 py-2.5 font-body text-sm font-medium transition-all border ${
                 selectedCategory === category.id
-                  ? "bg-black text-white border-black"
-                  : "bg-white text-[#2d2c2b] border-gray-200 hover:bg-gray-50"
+                  ? "bg-text-primary text-background border-text-primary"
+                  : "bg-surface text-text-primary border-border-color hover:bg-background"
               }`}
             >
               {category.icon}
@@ -189,13 +189,13 @@ export default function BlogSection() {
         <div className="mx-auto max-w-7xl px-6 md:px-12 mt-8 flex items-center justify-end gap-4">
           <a
             href="#"
-            className="font-body text-base font-medium text-[#2d2c2b] underline hover:text-gray-600"
+            className="font-body text-base font-medium text-text-primary underline hover:text-text-secondary"
           >
             View all
           </a>
           <button
             onClick={scrollLeft}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 text-[#2d2c2b] transition-all hover:bg-gray-300"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-surface border border-border-color text-text-primary transition-all hover:bg-background"
             aria-label="Previous articles"
           >
             <svg
@@ -210,7 +210,7 @@ export default function BlogSection() {
           </button>
           <button
             onClick={scrollRight}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 text-[#2d2c2b] transition-all hover:bg-gray-300"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-surface border border-border-color text-text-primary transition-all hover:bg-background"
             aria-label="Next articles"
           >
             <svg

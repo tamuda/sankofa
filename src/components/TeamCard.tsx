@@ -35,7 +35,7 @@ export default function TeamCard({
 
       {/* Owner Badge */}
       {isOwner && (
-        <div className="absolute top-4 right-4 z-30 bg-[#8881c2] rounded-full px-4 py-1.5 shadow-lg">
+        <div className="absolute top-4 right-4 z-30 bg-accent rounded-full px-4 py-1.5 shadow-lg">
           <span className="font-body text-xs font-semibold text-white uppercase tracking-wide">
             Owner
           </span>
@@ -57,7 +57,7 @@ export default function TeamCard({
                C120,65 150,50 180,55
                C210,60 240,45 280,50
                L280,112 L0,112 Z"
-            fill="#fafaf9"
+            fill="var(--surface)"
             className="opacity-95"
           />
         </svg>
@@ -65,10 +65,10 @@ export default function TeamCard({
 
       {/* Text Content - positioned at bottom with padding */}
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10">
-        <h3 className="font-title text-xl font-semibold tracking-tight mb-1 relative z-20 transition-colors duration-500 group-hover:text-[#605581]">
+        <h3 className="font-title text-xl font-semibold tracking-tight mb-1 relative z-20 transition-colors duration-500 group-hover:text-accent-deep">
           {name}
         </h3>
-        <p className="font-body text-sm text-white/90 relative z-20 transition-colors duration-500 group-hover:text-[#605581]">
+        <p className="font-body text-sm text-white/90 relative z-20 transition-colors duration-500 group-hover:text-accent-deep">
           {title}
         </p>
       </div>

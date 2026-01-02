@@ -4,7 +4,6 @@ import WhatBringsYouSection from "@/components/WhatBringsYouSection";
 import VideoSection from "@/components/VideoSection";
 import WaysToSupportSection from "@/components/WaysToSupportSection";
 import SupportTopicsSection from "@/components/SupportTopicsSection";
-import BlogSection from "@/components/BlogSection";
 import TeamSection from "@/components/TeamSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
@@ -15,7 +14,7 @@ import { SupportProvider } from "@/contexts/SupportContext";
 export default function Home() {
   return (
     <SupportProvider>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-background">
         <Navbar />
         <HeroSection />
         <WhatBringsYouSection />
@@ -24,9 +23,8 @@ export default function Home() {
         <SupportTopicsSection />
         <TeamSection />
         <TestimonialsSection />
-        <BlogSection />
         <FAQSection />
-        <div className="mx-auto max-w-7xl px-6 pb-16 md:px-12">
+        <div className="mx-auto max-w-7xl px-6 pb-32 md:px-12">
           <CTASection />
         </div>
         <Footer />
