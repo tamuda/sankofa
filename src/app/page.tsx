@@ -11,6 +11,8 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import { SupportProvider } from "@/contexts/SupportContext";
 
+import BlogSection from "@/components/BlogSection";
+
 export default function Home() {
   return (
     <SupportProvider>
@@ -23,6 +25,7 @@ export default function Home() {
         <SupportTopicsSection />
         <TeamSection />
         <TestimonialsSection />
+        <BlogSection />
         <FAQSection />
         <div className="mx-auto max-w-7xl px-6 pb-32 md:px-12">
           <CTASection />

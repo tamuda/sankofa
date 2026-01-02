@@ -35,7 +35,11 @@ export default function HeroSection() {
                 src="/girl-mind.png"
                 alt="Woman taking care of mental health"
                 fill
-                className="object-cover object-right h-full rounded-r-2xl"
+            className="object-cover w-full h-full rounded-2xl"
+            style={{
+              maskImage: "radial-gradient(circle at center, black 85%, transparent 100%)",
+              WebkitMaskImage: "radial-gradient(circle at center, black 85%, transparent 100%)"
+            }}
                 priority
                 sizes="50vw"
               />

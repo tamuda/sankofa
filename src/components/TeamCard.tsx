@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface TeamCardProps {
   name: string;
@@ -18,16 +19,19 @@ export default function TeamCard({
   isOwner = false,
 }: TeamCardProps) {
   return (
-    <div
+    <motion.div
       className="group relative w-[280px] h-[450px] overflow-hidden rounded-2xl cursor-pointer"
       onClick={onClick}
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
     >
       {/* Image - covers entire card */}
       <Image
         src={imageSrc}
         alt={name}
         fill
-        className="object-cover"
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
 
       {/* Gradient overlay - fades from transparent to dark at bottom */}
@@ -42,37 +46,26 @@ export default function TeamCard({
         </div>
       )}
 
-      {/* Organic fill overlay - flows from bottom on hover */}
-      <div className="absolute bottom-0 left-0 right-0 h-0 bg-stone-50 transition-all duration-700 ease-out overflow-hidden group-hover:h-28">
-        {/* Organic wave shape using SVG with pronounced curves */}
-        <svg
-          className="absolute bottom-0 left-0 right-0 w-full"
-          viewBox="0 0 280 112"
-          preserveAspectRatio="none"
-          style={{ height: '100%' }}
-        >
-          <path
-            d="M0,112 
-               C30,75 60,55 90,60
-               C120,65 150,50 180,55
-               C210,60 240,45 280,50
-               L280,112 L0,112 Z"
-            fill="var(--surface)"
-            className="opacity-95"
-          />
-        </svg>
-      </div>
+      {/* Simple white overlay - flows from bottom on hover */}
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 bg-white"
+        variants={{
+          rest: { height: 0 },
+          hover: { height: 112 },
+        }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      />
 
       {/* Text Content - positioned at bottom with padding */}
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10">
-        <h3 className="font-title text-xl font-semibold tracking-tight mb-1 relative z-20 transition-colors duration-500 group-hover:text-accent-deep">
+        <h3 className="font-title text-xl font-semibold tracking-tight mb-1 relative z-20 transition-colors duration-300 group-hover:text-accent-deep">
           {name}
         </h3>
-        <p className="font-body text-sm text-white/90 relative z-20 transition-colors duration-500 group-hover:text-accent-deep">
+        <p className="font-body text-sm text-white/90 relative z-20 transition-colors duration-300 group-hover:text-accent-deep">
           {title}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

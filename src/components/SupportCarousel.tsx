@@ -77,9 +77,9 @@ export default function SupportCarousel({ cards }: SupportCarouselProps) {
           }}
           transition={{
             type: "spring",
-            stiffness: 400,
-            damping: 40,
-            mass: 0.8
+            stiffness: 150,
+            damping: 25,
+            mass: 1
           }}
           className="flex cursor-grab active:cursor-grabbing"
         >
@@ -129,28 +129,37 @@ export default function SupportCarousel({ cards }: SupportCarouselProps) {
       </button>
 
       {/* Dots Indicator */}
-      <div className="mt-12 flex justify-center gap-3">
+      <div className="mt-12 flex justify-center items-center gap-0.5">
         {cards.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className="group relative h-4 w-4"
+            className="group relative p-1 outline-none"
             aria-label={`Go to slide ${index + 1}`}
           >
             <motion.div
+              layout
               initial={false}
               animate={{
-                width: index === currentIndex ? 32 : 8,
-                backgroundColor: index === currentIndex 
-                  ? "var(--color-text-primary)" 
-                  : "var(--color-text-secondary)",
+                width: index === currentIndex ? 48 : 8,
+                opacity: index === currentIndex ? 1 : 0.3,
+                backgroundColor: index === currentIndex ? "var(--text-primary)" : "var(--text-secondary)",
               }}
-              transition={{ duration: 0.2 }}
-              className="absolute top-1/2 h-2 -translate-y-1/2 rounded-full opacity-40 transition-colors"
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 30
+              }}
+              className="h-2 rounded-full bg-current"
+              style={{ 
+                backgroundColor: index === currentIndex ? "var(--text-primary)" : "var(--text-secondary)" 
+              }}
             />
+            <span className="sr-only">Slide {index + 1}</span>
           </button>
         ))}
       </div>
+
     </div>
   );
 }

@@ -4,7 +4,7 @@ import ActionButton from "./ActionButton";
 import { useSupport } from "@/contexts/SupportContext";
 
 export default function WhatBringsYouSection() {
-  const { setSelectedPath } = useSupport();
+  const { selectedPath, setSelectedPath } = useSupport();
 
   return (
     <section className="w-full bg-background py-16">
@@ -19,12 +19,14 @@ export default function WhatBringsYouSection() {
             text="I'm looking for support"
             iconSrc="/icons/moon.svg"
             iconAlt="Moon icon"
+            isActive={selectedPath === "support"}
             onClick={() => setSelectedPath("support")}
           />
           <ActionButton
             text="I'm interested in partnering"
             iconSrc="/icons/partner.svg"
             iconAlt="Partner icon"
+            isActive={selectedPath === "partner"}
             onClick={() => setSelectedPath("partner")}
           />
         </div>
