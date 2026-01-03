@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useSupport } from "@/contexts/SupportContext";
+import { motion } from "framer-motion";
 
 const TOPICS = [
   "Feeling anxious or overwhelmed",
@@ -30,18 +31,39 @@ export default function SupportTopicsSection() {
             We help you through issues like:
           </h2>
 
-          <div className="mt-14 md:-mb-10 flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+          <div 
+            key={selectedPath}
+            className="mt-14 md:-mb-10 flex flex-wrap justify-center gap-2 max-w-4xl mx-auto"
+          >
             {TOPICS.map((topic, index) => (
-              <span
+              <motion.span
                 key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                  ease: "easeOut"
+                }}
                 className="rounded-full bg-accent-soft px-6 py-3 font-body text-base font-medium text-accent md:text-lg"
               >
                 {topic}
-              </span>
+              </motion.span>
             ))}
-            <span className="rounded-full bg-accent-soft px-6 py-3 font-body text-base font-medium text-accent md:text-lg">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{
+                duration: 0.5,
+                delay: TOPICS.length * 0.1,
+                ease: "easeOut"
+              }}
+              className="rounded-full bg-accent-soft px-6 py-3 font-body text-base font-medium text-accent md:text-lg"
+            >
               And more
-            </span>
+            </motion.span>
           </div>
         </div>
 
@@ -78,10 +100,10 @@ export default function SupportTopicsSection() {
           </div>
 
           {/* Card 3 - Timing (Center, Shortest) */}
-          <div className="w-[280px] rounded-3xl bg-stone-100 p-10 h-[280px] flex flex-col justify-between text-left">
+          <div className="w-[280px] rounded-3xl bg-card-bg p-10 h-[280px] flex flex-col justify-between text-left">
             <div>
               <svg
-                className="h-8 w-8 mb-4 text-accent-deep"
+                className="h-8 w-8 mb-4 text-accent-deep dark:text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -93,7 +115,7 @@ export default function SupportTopicsSection() {
                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <h3 className="font-title text-2xl font-semibold tracking-tight text-accent-deep">
+              <h3 className="font-title text-2xl font-semibold tracking-tight text-accent-deep dark:text-white">
                 The session can be held at a convenient time for you.
               </h3>
             </div>
@@ -121,7 +143,7 @@ export default function SupportTopicsSection() {
                 src="/guy-therapy.png"
                 alt="Therapy session"
                 fill
-                className="object-cover"
+                className="object-cover scale-110"
               />
             </div>
             {/* Content */}

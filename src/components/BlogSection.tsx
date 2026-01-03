@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import BlogCard from "./BlogCard";
 
 interface BlogArticle {
@@ -116,7 +116,9 @@ const CATEGORIES = [
 
 export default function BlogSection() {
   const [selectedCategory, setSelectedCategory] = useState("featured");
+  const [isPaused, setIsPaused] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -125,12 +127,34 @@ export default function BlogSection() {
     }
   };
 
-  const scrollRight = () => {
+  const scrollRight = useCallback(() => {
     if (scrollContainerRef.current) {
       const scrollAmount = 400;
-      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      const container = scrollContainerRef.current;
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      
+      // If at the end, scroll back to start
+      if (container.scrollLeft >= maxScroll - 10) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      }
     }
-  };
+  }, []);
+
+  // Auto-scroll timer
+  useEffect(() => {
+    if (isPaused) {
+      if (timerRef.current) clearInterval(timerRef.current);
+    } else {
+      timerRef.current = setInterval(() => {
+        scrollRight();
+      }, 3000);
+    }
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [scrollRight, isPaused]);
 
   return (
     <section className="w-full bg-surface py-24">
@@ -162,7 +186,11 @@ export default function BlogSection() {
       </div>
 
       {/* Horizontal Scrollable Cards - Full Width */}
-      <div className="relative w-full">
+      <div 
+        className="relative w-full"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <div
           ref={scrollContainerRef}
           className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 pl-6 md:pl-12"

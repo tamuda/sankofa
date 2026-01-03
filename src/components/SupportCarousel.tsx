@@ -43,7 +43,7 @@ export default function SupportCarousel({ cards }: SupportCarouselProps) {
     } else {
       timerRef.current = setInterval(() => {
         goToNext();
-      }, 5000);
+      }, 2000);
     }
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);

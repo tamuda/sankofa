@@ -28,18 +28,17 @@ export default function HeroSection() {
             </button>
           </div>
 
-          {/* Right Side - Girl Mind Image - showing right side where person is */}
+          {/* Right Side - Girl Mind Image */}
           <div className="absolute right-0 top-0 h-full w-full overflow-hidden rounded-r-2xl">
             <div className="relative h-full w-full">
               <Image
                 src="/girl-mind.png"
                 alt="Woman taking care of mental health"
                 fill
-            className="object-cover w-full h-full rounded-2xl"
-            style={{
-              maskImage: "radial-gradient(circle at center, black 85%, transparent 100%)",
-              WebkitMaskImage: "radial-gradient(circle at center, black 85%, transparent 100%)"
-            }}
+                className="object-cover w-full h-full rounded-2xl"
+                style={{
+                  filter: "drop-shadow(2px 0 0 white) drop-shadow(-2px 0 0 white) drop-shadow(0 2px 0 white) drop-shadow(0 -2px 0 white)"
+                }}
                 priority
                 sizes="50vw"
               />
